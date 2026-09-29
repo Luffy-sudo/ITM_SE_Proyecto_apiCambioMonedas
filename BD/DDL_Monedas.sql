@@ -1,5 +1,5 @@
 --Ejecutar primero
-DROP DATABASE Monedas WITH (FORCE);
+DROP DATABASE IF EXISTS Monedas;
 --Ejecutar segundo
 CREATE DATABASE Monedas; 
 
@@ -53,7 +53,6 @@ CREATE TABLE Pais(
 CREATE UNIQUE INDEX ixPais
 	ON Pais(Pais);
     
-    
 /* Crear tabla USUARIO */
 CREATE TABLE Usuario( 
 	Id SERIAL PRIMARY KEY,
@@ -81,5 +80,3 @@ CREATE SEQUENCE CambioMoneda_Secuencia INCREMENT 1 START 1
 
 ALTER TABLE CambioMoneda
 	ALTER COLUMN Id SET DEFAULT NEXTVAL('CambioMoneda_Secuencia');
-    
-
